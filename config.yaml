@@ -1,0 +1,538 @@
+substitutions:
+    devicename: fireplace-clock
+  
+  
+  esphome:
+    name: fireplace-clock
+    platform: ESP32
+    board: featheresp32
+    comment: ESPClock
+  # Enable logging
+  logger:
+  # Enable Home Assistant API
+  api:
+    encryption:
+      key: "i21USvDruBRuPndxTYuQ31ijowUdoEVXOKYwPUQITAw="
+  ota:
+  
+  captive_portal:
+  wifi:
+    ssid: !secret wifi_ssid
+    password: !secret wifi_password
+    manual_ip:
+      static_ip: 192.168.2.18
+      gateway: 192.168.2.254
+      subnet: 255.255.255.0
+    ap:
+      ssid: "Clock Hotspot"
+      password: !secret wifi_password
+  web_server:
+    port: 80
+  
+  spi:
+    clk_pin: GPIO18
+    mosi_pin: GPIO19
+    
+  time:
+    - platform: homeassistant
+      id: esptime 
+      
+  sensor:
+  
+    - platform: homeassistant
+      id: bookcase_temperature
+      entity_id: sensor.bookshelf_temperature_2
+      internal: true
+    - platform: homeassistant
+      id: bigbutton_temperature
+      entity_id: sensor.bigbutton_temperature_2
+      internal: true    
+      
+    - platform: homeassistant
+      id: buienradar_temp
+      entity_id: sensor.buienradar_feel_temperature
+      internal: true
+      
+    - platform: homeassistant
+      id: moto_batt
+      entity_id: sensor.moto_g_6_plus_battery_level
+      internal: true     
+      unit_of_measurement: percent
+      
+    - platform: homeassistant
+      id: housecon1_temp
+      entity_id: sensor.housecon1_temperature
+      internal: true
+  
+  text_sensor:    
+  #  - platform: homeassistant
+  #    id: villa_next_match
+  #    entity_id: sensor.astonvilla_match_date
+  #    internal: true
+   
+  # Villa Sensors    
+    - platform: homeassistant
+      internal: true
+      entity_id: calendar.aston_villa_fixtures
+      attribute: "message"
+      id: villa_fixture
+      
+    - platform: homeassistant
+      internal: true
+      entity_id: calendar.aston_villa_fixtures
+      attribute: "start_time"
+      id: villa_start_time
+      
+    - platform: homeassistant
+      internal: true
+      entity_id: calendar.aston_villa_fixtures
+      attribute: "location"
+      id: villa_location    
+      
+    - platform: homeassistant
+      internal: true
+      entity_id: sensor.astonvilla_match_date
+      id: villa_matchtime
+  # Ajax Sensors    
+    - platform: homeassistant
+      internal: true
+      entity_id: calendar.ajax_fixtures
+      attribute: "message"
+      id: ajax_fixture
+      
+    - platform: homeassistant
+      internal: true
+      entity_id: calendar.ajax_fixtures
+      attribute: "start_time"
+      id: ajax_start_time
+      
+    - platform: homeassistant
+      internal: true
+      entity_id: calendar.ajax_fixtures
+      attribute: "location"
+      id: ajax_location    
+      
+    - platform: homeassistant
+      internal: true
+      entity_id: sensor.ajax_match_date
+      id: ajax_matchtime
+  # F1 Sensors    
+    - platform: homeassistant
+      internal: false
+      entity_id: calendar.formula_1_race_times
+      attribute: "message"
+      id: f1_fixture
+      
+    - platform: homeassistant
+      internal: true
+      entity_id: calendar.formula_1_race_times
+      attribute: "start_time"
+      id: f1_start_time
+      
+    - platform: homeassistant
+      internal: false
+      entity_id: calendar.formula_1_race_times
+      attribute: "location"
+      id: f1_location    
+      
+    - platform: homeassistant
+      internal: true
+      entity_id: sensor.f1_session_date
+      id: f1_sessiontime
+      
+    - platform: homeassistant
+      id: buienradar_condition
+      entity_id: sensor.buienradar_condition
+      internal: true  
+      
+  binary_sensor:
+      
+  switch:
+    - platform: restart
+      name: Fireplace Clock Restart
+      
+    - platform: gpio
+      pin: GPIO4
+      name: "Fireplace Clock Backlight"
+      id: backlight
+  
+  
+      
+  color:
+    - id: my_red
+      red: 86%
+      green: 15%
+      blue: 27%
+    - id: my_yellow
+      red: 100%
+      green: 100%
+      blue: 0%
+    - id: my_green
+      red: 0%
+      green: 100%
+      blue: 80%
+    - id: my_blue
+      red: 5%
+      green: 71%
+      blue: 91%
+    - id: my_gray
+      red: 50%
+      green: 50%
+      blue: 50%
+    - id: my_pink
+      red: 100%
+      green: 0%
+      blue: 50%
+    - id: my_white
+      red: 100%
+      green: 100%
+      blue: 100%
+    - id: my_black
+      red: 0%
+      green: 0%
+      blue: 0%
+  font:
+    - file: "Roboto-Medium.ttf"
+      id: robo_60
+      size: 60
+    - file: "Roboto-Medium.ttf"
+      id: robo_35
+      size: 35
+    - file: "Roboto-Medium.ttf"
+      id: robo_50
+      size: 50
+    - file: "Roboto-Medium.ttf"
+      id: robo_55
+      size: 55    
+    - file: "Roboto-Medium.ttf"
+      id: robo_40
+      size: 40    
+    - file: "Technology.ttf"
+      id: technology_118
+      size: 118
+      glyphs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, c, C, ':', '.', '°', '-']
+  #  - file: "Technology.ttf"
+  #    id: technology_125
+  #    size: 125
+    - file: "Technology.ttf"
+      id: technology_130
+      size: 130
+      glyphs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, ':', '.', '°', '-']
+  #  - file: "Technology.ttf"
+  #    id: technology_135
+  #    size: 135
+  #  - file: "Technology.ttf"
+  #    id: technology_90
+  #    size: 90
+    - file: "Technology.ttf"
+      id: technology_64
+      size: 64
+  
+  image:
+  #0-default.png
+    - file: "images/0-default.gif"
+      id: wpng_0
+      type: RGB24
+  #1-clear-night.png
+    - file: "images/1-clear-night.gif"
+      id: wpng_1
+      type: RGB24
+  #2-cloudy.png
+    - file: "images/2-cloudy.gif"
+      id: wpng_2
+      type: RGB24
+  #3-fog.png
+    - file: "images/3-fog.gif"
+      id: wpng_3
+      type: RGB24 
+  #4-hail.png
+    - file: "images/4-hail.gif"
+      id: wpng_4
+      type: RGB24
+  #5-lightning.png
+    - file: "images/5-lightning.gif"
+      id: wpng_5
+      type: RGB24
+  #6-lightning-rainy.png
+    - file: "images/6-lightning-rainy.gif"
+      id: wpng_6
+      type: RGB24
+  #7-partlycloudy.png
+    - file: "images/7-partlycloudy.gif"
+      id: wpng_7
+      type: RGB24
+  #8-pouring.png
+    - file: "images/8-pouring.gif"
+      id: wpng_8
+      type: RGB24
+  #9-rainy.png
+    - file: "images/9-rainy.gif"
+      id: wpng_9
+      type: RGB24
+  #10-snowy.png
+    - file: "images/10-snowy.gif"
+      id: wpng_10
+      type: RGB24
+  #11-snowy-rainy.png
+    - file: "images/11-snowy-rainy.gif"
+      id: wpng_11
+      type: RGB24
+  #12-sunny.png
+    - file: "images/12-sunny.gif"
+      id: wpng_12
+      type: RGB24
+  #13-windy.png
+    - file: "images/13-windy.gif"
+      id: wpng_13
+      type: RGB24
+  #14-windy-variant.png
+    - file: "images/14-windy-variant.gif"
+      id: wpng_14
+      type: RGB24
+  #15-exceptional.png
+    - file: "images/15-exceptional.gif"
+      id: wpng_15
+      type: RGB24
+  #battery
+  #  - file: "images/battery.gif"
+  #    id: battery
+  #    type: RGB24 
+  
+  
+  light:
+    - platform: fastled_clockless
+      chipset: SK6812
+      pin: GPIO27
+      num_leds: 24
+      rgb_order: GRB
+      name: "Fireplace Clock"
+      effects:
+        - addressable_rainbow:
+        - addressable_rainbow:
+            name: Rainbow Effect slow
+            speed: 20
+            width: 10
+        - addressable_rainbow:
+            name: Rainbow Effect wide
+            speed: 1
+            width: 200
+  
+  
+  display:
+    - platform: st7789v
+      backlight_pin: GPIO4
+      cs_pin: GPIO5
+      dc_pin: GPIO16
+      reset_pin: GPIO23
+      rotation: 270
+      id: my_display
+      pages:
+  
+        - id: time_blue
+          lambda: |-
+             it.rectangle(0,  0, it.get_width(), it.get_height(), id(my_blue));
+             it.strftime(116, 82, id(technology_118), id(my_blue), TextAlign::CENTER, "%H:%M", id(esptime).now());
+  
+        - id: villanextgame
+          lambda: |-
+             it.rectangle(0,  0, it.get_width(), it.get_height(), id(my_blue));
+             it.print(120, 35, id(robo_50), id(my_blue), TextAlign::CENTER, "VILLA"); 
+             if (id(villa_matchtime).has_state()) {
+             it.printf(120, 92, id(robo_50), id(my_blue), TextAlign::CENTER, id(villa_matchtime).state.c_str());
+             }
+  
+        - id: f1session
+          lambda: |-
+             it.rectangle(0,  0, it.get_width(), it.get_height(), id(my_pink));
+             it.print(120, 35, id(robo_50), id(my_white), TextAlign::CENTER, "F1"); 
+             if (id(f1_sessiontime).has_state()) {
+             it.printf(120, 92, id(robo_50), id(my_white), TextAlign::CENTER, id(f1_sessiontime).state.c_str());
+             }
+  
+        - id: ajaxnextgame
+          lambda: |-
+             it.rectangle(0,  0, it.get_width(), it.get_height(), id(my_white));
+             it.print(120, 35, id(robo_50), id(my_white), TextAlign::CENTER, "AJAX"); 
+             if (id(ajax_matchtime).has_state()) {
+             it.printf(120, 92, id(robo_50), id(my_white), TextAlign::CENTER, id(ajax_matchtime).state.c_str());
+             }
+  
+  
+        - id: out_temp
+          lambda: |-
+             it.rectangle(0,  0, it.get_width(), it.get_height(), id(my_blue));
+             it.print(120, 35, id(robo_60), id(my_blue), TextAlign::CENTER, "outside");
+             if (id(buienradar_temp).has_state()) {
+             it.printf(120, 92, id(robo_60), id(my_blue), TextAlign::CENTER, "%.1f°C", id(buienradar_temp).state);
+             }
+             
+        - id: condition_out            
+          lambda: |-
+             it.rectangle(0,  0, it.get_width(), it.get_height(), id(my_blue));           
+             it.set_rotation(DISPLAY_ROTATION_270_DEGREES);
+             
+             if (id(buienradar_condition).state == "clear-night")
+             {
+                it.image(85, 5, id(wpng_1));
+             }
+             else if (id(buienradar_condition).state == "cloudy")
+             {
+                it.image(85, 5, id(wpng_2));
+             }
+             else if (id(buienradar_condition).state == "fog")
+             {
+                it.image(85, 5, id(wpng_3));
+             }
+             else if (id(buienradar_condition).state == "hail")
+             {
+                it.image(85, 5, id(wpng_4));
+             }
+             else if (id(buienradar_condition).state == "lightning")
+             {
+                it.image(85, 5, id(wpng_5));
+             }
+             else if (id(buienradar_condition).state == "lightning-rainy")
+             {
+                it.image(85, 5, id(wpng_6));
+             }
+             else if (id(buienradar_condition).state == "partlycloudy")
+             {
+                it.image(85, 5, id(wpng_7));
+             }
+             else if (id(buienradar_condition).state == "pouring")
+             {
+                it.image(85, 5, id(wpng_8));
+             }
+             else if (id(buienradar_condition).state == "rainy")
+             {
+                it.image(85, 5, id(wpng_9));
+             }
+             else if (id(buienradar_condition).state == "snowy")
+             {
+                it.image(85, 5, id(wpng_10));
+             }
+             else if (id(buienradar_condition).state == "snowy-rainy'")
+             {
+                it.image(85, 5, id(wpng_11));
+             }
+             else if (id(buienradar_condition).state == "sunny")
+             {
+                it.image(85, 5, id(wpng_12));
+             }
+             else if (id(buienradar_condition).state == "windy")
+             {
+                it.image(85, 5, id(wpng_13));
+             }
+             else if (id(buienradar_condition).state == "windy-variant")
+             {
+                it.image(85, 5, id(wpng_14));
+             }
+             else if (id(buienradar_condition).state == "exceptional")
+             {
+                it.image(85, 5, id(wpng_15));
+             }
+             else
+             {
+                it.image(85, 5, id(wpng_0));
+             }
+             if (id(buienradar_condition).has_state()) {
+             it.printf(120, 55, id(robo_60), id(my_blue), TextAlign::TOP_CENTER , "%s", id(buienradar_condition).state.c_str());
+             }
+             
+        - id: moto_battery
+          lambda: |-
+            if (id(moto_batt).state < 10 ){
+              //  Insert actions for "black" situation
+              it.rectangle(0,  0, it.get_width(), it.get_height(), id(my_pink));
+              it.print(120, 35, id(robo_60), id(my_pink), TextAlign::CENTER, "battery");
+              it.printf(120, 92, id(robo_60), id(my_pink), TextAlign::CENTER, "%.0f%%", id(moto_batt).state);
+            } else {
+              //  Insert actions for "Red" situation
+              it.rectangle(0,  0, it.get_width(), it.get_height(), id(my_blue));
+              it.print(120, 35, id(robo_60), id(my_blue), TextAlign::CENTER, "battery");
+              it.printf(120, 92, id(robo_60), id(my_blue), TextAlign::CENTER, "%.0f%%", id(moto_batt).state);
+            }
+             
+        - id: insidetemp
+          lambda: |-
+             it.rectangle(0,  0, it.get_width(), it.get_height(), id(my_blue));
+             it.print(120, 35, id(robo_50), id(my_blue), TextAlign::CENTER, "livingroom");
+             if (id(bookcase_temperature).has_state()) {
+             it.printf(120, 92, id(robo_60), id(my_blue), TextAlign::CENTER, "%.1f°C", id(bookcase_temperature).state);
+             }
+  
+        - id: bedroomtemp
+          lambda: |-
+             it.rectangle(0,  0, it.get_width(), it.get_height(), id(my_blue));
+             it.print(120, 35, id(robo_50), id(my_blue), TextAlign::CENTER, "bedroom");
+             if (id(bigbutton_temperature).has_state()) {
+             it.printf(120, 92, id(robo_60), id(my_blue), TextAlign::CENTER, "%.1f°C", id(bigbutton_temperature).state);
+             }
+  
+  interval:
+    - interval: 5s
+      then:
+        - display.page.show: !lambda |-
+            static int page_num = 0;
+  
+            if (page_num == 16) {
+                page_num = 0;
+            }
+            page_num += 1;
+  
+            switch (page_num) {
+              case 1:
+                return id(time_blue);
+                break;
+              case 2:
+                return id(villanextgame);
+                break;
+              case 3:
+                return id(time_blue);
+                break;
+              case 4:
+                return id(ajaxnextgame);
+                break;
+              case 5:
+                return id(time_blue);
+                break;  
+              case 6:
+                return id(f1session);
+                break; 
+              case 7:
+                return id(time_blue);
+                break;              
+              case 8:
+                return id(condition_out);
+                break; 
+              case 9:
+                return id(time_blue);
+                break;
+              case 10:
+                return id(moto_battery);
+                break;
+              case 11:
+                return id(time_blue);
+                break;
+              case 12:
+                return id(out_temp);
+                break;
+              case 13:
+                return id(time_blue);
+                break;
+              case 14:
+                return id(insidetemp);
+                break;
+              case 15:
+                return id(time_blue);
+                break;
+              case 16:
+                return id(bedroomtemp);
+                break;              
+              default:        //  added to avoid compiler warning/error
+                return id(time_blue); 
+            }
+        - component.update: my_display
+        
+        
+  
