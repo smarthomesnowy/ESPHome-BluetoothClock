@@ -9,10 +9,9 @@ The missing segment in the clock is really annoying, the "moodlight" RGB colours
 What I have ended up with is a clock that is synchronised with a timeserver with a really nice mood light with effects and colours that I can change in Home Assistant.
 
 But not only a clock! I have imported sensors from Home Assistant into the ESP32 running ESPHome that show me - the weather right now using animated icons - the temp of the living room - the temp of the bedroom - my phone battery % - the days hours, minutes and seconds till Ajax play their game - the days hours, minutes and seconds till Aston Villa play their game and when the next Formula 1 session is starting.
+
 I have paired the bluetooth to the Raspberry Pi4 in the digital fireplace and use it to play Text To Speech (TTS) alerts from Home Assistant.
 When there is a football game or F1 coming up it will play a TTS message to the speaker "One hour till Ajax kick off!" and another trigger for 15 minutes before a game/race.
-
-
 
 
 ## Parts used
@@ -38,9 +37,9 @@ The weather icons work by displaying different icons based on the weather condit
 Not really much to do with Home Assistant on this project other than sending ESPHome some existing sensors and a few little automations to turn things off and on and play the TTS alerts.
 
 ## Construction
-So I took it apart and found the display is one board and the bluetooth radio - SD card reader - mini speakers - volume controls and battery are on another board.
+I took it apart and found the display is one board and the bluetooth radio - SD card reader - mini speakers - volume controls and battery are on another board.
 
-So I had the idea to remove the display board and leave the bluetooth board intact.
+I had the idea to remove the display board and leave the bluetooth board intact.
 At first I was going to buy a LED 7 segment display with blue LED's and use an ESP board to control it but after looking around I found an all in one solution that was going to cost 3 euros more than the ESP32 I was going to buy.
 
 The TFT display on the Lillygo board is very clear and bright and looks good even behind the opaque diffuser on the front of the display.
