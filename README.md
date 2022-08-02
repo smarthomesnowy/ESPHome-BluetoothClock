@@ -10,7 +10,7 @@ What I have ended up with is a clock that is synchronised with a timeserver with
 
 But not only a clock! I have imported sensors from Home Assistant into the ESP32 running ESPHome that show me - the weather right now using animated icons - the temp of the living room - the temp of the bedroom - my phone battery % - the days hours, minutes and seconds till Ajax play their game - the days hours, minutes and seconds till Aston Villa play their game and when the next Formula 1 session is starting.
 
-I have paired the bluetooth to the Raspberry Pi4 in the digital fireplace and use it to play Text To Speech (TTS) alerts from Home Assistant.
+I have paired the bluetooth to the Raspberry Pi4 in the [smart fireplace](https://github.com/smarthomesnowy/Smart-Fireplace) and use it to play Text To Speech (TTS) alerts from Home Assistant.
 When there is a football game or F1 coming up it will play a TTS message to the speaker "One hour till Ajax kick off!" and another trigger for 15 minutes before a game/race.
 
 
