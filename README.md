@@ -51,6 +51,10 @@ The new LED ring was taped to the plastic surrond behind the display board.
 
 ## Pictures / Video
 
+
+https://user-images.githubusercontent.com/109257559/182633197-b5046ac8-a0b4-466d-b8de-114f65f05df5.mp4
+
+
 ## Conclusion
 
 This is my most complicated device so far and after using it for a while I can see some additions I could make such as making an "alarm" on the display and LED ring for certain triggers.
