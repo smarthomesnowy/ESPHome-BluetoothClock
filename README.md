@@ -61,12 +61,14 @@ Everything working only need to clean up the wiring and cut the prototype board 
 
 Sitting on the fireplace doing it's job.
 <video src="https://user-images.githubusercontent.com/109257559/182634906-2f19d9fd-34fa-41c8-9638-9a617642f47a.mp4"></video>
-The old clock display board
+The old clock display board.
 ![photo_2022-03-30_14-02-52](https://user-images.githubusercontent.com/109257559/182638565-58fea1f8-6f3f-47cf-a2dc-d5105a1aae65.jpg)
-Bluetooth board and battery
+Bluetooth board and battery.
 ![photo_2022-03-30_14-02-46](https://user-images.githubusercontent.com/109257559/182638844-0e83aa5a-9c4c-42c3-8f72-659a68c3bb57.jpg)
 New clock inplace
 ![IMG_20220331_135432913](https://user-images.githubusercontent.com/109257559/182638952-f9d30239-c426-49be-82ee-390e45f6d192.jpg)
+Testing the display and ring.
+![IMG_20220331_131959078](https://user-images.githubusercontent.com/109257559/182639758-2a9dc538-9071-43c9-bbb4-c84d91a6478c.jpg)
 
 
 ## Conclusion
