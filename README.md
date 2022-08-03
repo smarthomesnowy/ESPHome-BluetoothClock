@@ -54,13 +54,13 @@ The new LED ring was taped to the plastic surrond behind the display board.
 Testing the display and also showing the sensors coming from Home Assistant.
 <video src="https://user-images.githubusercontent.com/109257559/182633197-b5046ac8-a0b4-466d-b8de-114f65f05df5.mp4"></video>
 Final testing of the board and RGB LED ring.
-<video src="[https://user-images.githubusercontent.com/109257559/182633197-b5046ac8-a0b4-466d-b8de-114f65f05df5.mp4](https://user-images.githubusercontent.com/109257559/182633772-8180c1b3-3676-4163-b6d3-e65c538dc99c.mp4)"></video>
+<video src="https://user-images.githubusercontent.com/109257559/182633772-8180c1b3-3676-4163-b6d3-e65c538dc99c.mp4"></video>
 
 Everything working only need to clean up the wiring and cut the prototype board holding the board to size.
-<video src="[https://user-images.githubusercontent.com/109257559/182633197-b5046ac8-a0b4-466d-b8de-114f65f05df5.mp4](https://user-images.githubusercontent.com/109257559/182634172-a4254212-61e6-43d3-a5f7-c2485cdb6275.mp4)"></video>
+<video src="https://user-images.githubusercontent.com/109257559/182634172-a4254212-61e6-43d3-a5f7-c2485cdb6275.mp4"></video>
 
 Sitting on the fireplace doing it's job.
-<video src="[https://user-images.githubusercontent.com/109257559/182633197-b5046ac8-a0b4-466d-b8de-114f65f05df5.mp4](https://user-images.githubusercontent.com/109257559/182634906-2f19d9fd-34fa-41c8-9638-9a617642f47a.mp4)"></video>
+<video src="https://user-images.githubusercontent.com/109257559/182634906-2f19d9fd-34fa-41c8-9638-9a617642f47a.mp4"></video>
 
 
 
