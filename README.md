@@ -52,6 +52,7 @@ The new LED ring was taped to the plastic surrond behind the display board.
 ## Pictures / Video
 
 Testing the display and also showing the sensors coming from Home Assistant.
+<video src="https://user-images.githubusercontent.com/109257559/182633197-b5046ac8-a0b4-466d-b8de-114f65f05df5.mp4"></video>
 https://user-images.githubusercontent.com/109257559/182633197-b5046ac8-a0b4-466d-b8de-114f65f05df5.mp4
 Final testing of the board and RGB LED ring.
 https://user-images.githubusercontent.com/109257559/182633772-8180c1b3-3676-4163-b6d3-e65c538dc99c.mp4
