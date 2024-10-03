@@ -1,5 +1,7 @@
 # ESPHome-BluetoothClock
-![2024-10-03 06_52_33-Window](https://github.com/user-attachments/assets/a3049fd2-e471-48da-a3c4-aa5221cb8afe) ![2024-10-03 06_53_17-Window](https://github.com/user-attachments/assets/3c80594d-c44c-47d0-a892-e9a36699e81a) ![2024-10-03 06_55_37-Window](https://github.com/user-attachments/assets/770e52fe-6d01-4280-802a-a137ad75f1a0) ![2024-10-03 06_57_09-Window](https://github.com/user-attachments/assets/882729d9-1d74-438e-9c7e-db2bc1df4c46)
+![2024-10-03 06_52_33-Window](https://github.com/user-attachments/assets/a3049fd2-e471-48da-a3c4-aa5221cb8afe) ![2024-10-03 06_53_17-Window](https://github.com/user-attachments/assets/3c80594d-c44c-47d0-a892-e9a36699e81a) ![2024-10-03 06_55_37-Window](https://github.com/user-attachments/assets/770e52fe-6d01-4280-802a-a137ad75f1a0)
+
+![2024-10-03 06_57_09-Window](https://github.com/user-attachments/assets/882729d9-1d74-438e-9c7e-db2bc1df4c46) ( don't mind the scrolling text in the screenshot, it really does not like to be screenshotted!)
 
 
 ## Idea
